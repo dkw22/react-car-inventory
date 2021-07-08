@@ -21,6 +21,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import clsx from 'clsx';
 import { RouteComponentProps, withRouter, Switch, Route } from "react-router-dom";
+import { DataTable } from '../DataTable'
 
 interface DashProps{
     history: RouteComponentProps["history"];
@@ -180,7 +181,7 @@ export const Dashboard = withRouter(( props:DashProps ) => {
           <div className={classes.drawerHeader} />
   
           <h1>Hello World Until Data Shows Up</h1>
-          {/* <DataTable /> */}
+          <DataTable />
         </main>
       </div>
       )
