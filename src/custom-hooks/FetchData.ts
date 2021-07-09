@@ -9,6 +9,7 @@ export const useGetData = () => {
         setData(result)
     }
 
+    // Introducing the useEffect Hook to add our data to react State
     useEffect( () => {
         handleDataFetch();
     }, [])
