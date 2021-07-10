@@ -5,11 +5,11 @@ const rootSlice = createSlice({
     initialState: {
         make: "Kia",
         model: "Rondo",
-        year: 2007,
+        year: "2007",
         color: "Blue",
-        price: 200.00,
-        doors: 4,
-        seats: 5,
+        price: "200.00",
+        doors: "4",
+        seats: "5",
         condition: "used"
     },
     reducers: {

@@ -42,7 +42,8 @@ export const CarForm = (props:CarFormProps) => {
         if( props.id!){
             server_calls.update(props.id!, data)
             console.log(`Updated:${data} ${props.id}`)
-            // window.location.reload()
+            // getData
+            // setTimeout(()=>{ window.location.reload(); }, 1000);
             event.target.reset();
         } else {
             dispatch(chooseMake(data.make))
@@ -52,7 +53,7 @@ export const CarForm = (props:CarFormProps) => {
             dispatch(chooseCondition(data.condition))
             dispatch(choosePrice(data.price))
             server_calls.create(store.getState())
-            // window.location.reload()
+            setTimeout(()=>{ window.location.reload(); }, 1000);
         }
     }
 

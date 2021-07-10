@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Home, Dashboard, Signin } from './components';
+import { Home, Dashboard, SignIn } from './components';
 import reportWebVitals from './reportWebVitals';
 import './styles.css'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import { FirebaseAppProvider, AuthCheck } from 'reactfire';
+import 'firebase/auth';
+import { firebaseConfig } from './firebaseConfig'
 
 
 ReactDOM.render(
   <React.StrictMode>
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}> {/* New Provider */}
     <Provider store = { store }>
       <Router>
         <Switch>
@@ -23,12 +27,13 @@ ReactDOM.render(
           </Route>
 
           <Route path='/signin'>
-            <Signin></Signin>
+            <SignIn></SignIn>
           </Route>
 
         </Switch>
       </Router>
     </Provider>
+    </FirebaseAppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

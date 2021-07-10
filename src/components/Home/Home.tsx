@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import car_image from '../../assets/images/car.png';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { AuthCheck } from 'reactfire';
 
 interface Props{
     title: string;
@@ -68,26 +69,35 @@ export const Home = ( props:Props) => {
             <nav>
                 <div className={classes.navbar_container}>
                     <h1 className={ `${classes.logo} `}>
-                        <a href="#" className={ `${classes.logo_a} ${classes.logo_navigation}` }>Coding Cars</a>
+                        <a href="#" className={ `${classes.logo_a} ${classes.logo_navigation}` }>Brand</a>
                     </h1>
                     <ul className={ `${classes.navigation} ${classes.logo_navigation}` }>
                         <li>
                             <Link to='/' href="" className={classes.nav_a}>Home</Link>
                         </li>
+										{/* START OF NEW ADDITION */}
+                        <AuthCheck fallback={
+                            <li>
+                                <Link to="/signin" className={classes.nav_a}>Sign In</Link>
+                            </li>
+                        }>
+                        
                         <li>
-                            <Link to="/dashboard" className={classes.nav_a}>About</Link>
+                            <Link to="/dashboard" className={classes.nav_a}>Dashboard</Link>
                         </li>
                         <li>
-                            <Link to="/signin" className={classes.nav_a}>Learn More</Link>
+                            <Link to="/signin" className={classes.nav_a}>Sign Out</Link>
                         </li>
+                        </AuthCheck>
+										{/* END OF NEW ADDITION */}
                     </ul>
                 </div>
             </nav>
             <main className={classes.main}>
                 <div className={classes.main_text}>
                     <h1>{ props.title }</h1>
-                    <p>I like cars</p>
-                    <Button color='primary' variant="contained">Click Me</Button>
+                    <p>I like drones</p>
+                    <Button color='primary' variant="contained">SignIn</Button>
                 </div>
             </main>
         </div>

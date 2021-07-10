@@ -35,13 +35,14 @@ export const server_calls = {
     },
     update: async (id:string, data:any = {}) => {
         const response = await fetch(`https://car-inventory-dw.herokuapp.com/api/cars/${id}`, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`
             },
             body: JSON.stringify(data)
         });
+
     },
     delete: async(id:string) => {
         const response = await fetch(`https://car-inventory-dw.herokuapp.com/api/cars/${id}`,{

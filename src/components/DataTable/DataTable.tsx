@@ -45,7 +45,6 @@ export const DataTable = () => {
   }
 
   console.log(gridData.data.id)
-  console.log(carData)
 
   return (
     <div style={{ height: 400, width: '100%' }}>
@@ -54,7 +53,7 @@ export const DataTable = () => {
         <Button onClick={handleOpen}>Update</Button>
         <Button variant="contained" color="secondary" onClick={deleteData}>Delete</Button>
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-            <DialogTitle id="form-dialog-title">Update Car</DialogTitle>
+            <DialogTitle id="form-dialog-title">Update Car {gridData.data.id!}</DialogTitle>
             <DialogContent>
               <DialogContentText>Update Car</DialogContentText>
                 <CarForm id={gridData.data.id!}/>
@@ -64,7 +63,6 @@ export const DataTable = () => {
               <Button onClick={handleClose} color = "primary">Done</Button> 
             </DialogActions>
           </Dialog>
-
     </div>
   );
 }         

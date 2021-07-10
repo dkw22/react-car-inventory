@@ -1,4 +1,6 @@
 import React, { useState} from 'react';
+import clsx from 'clsx';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { Drawer as MUIDrawer, 
     ListItem, 
     List, 
@@ -20,11 +22,9 @@ import { Drawer as MUIDrawer,
     DialogContentText,
     DialogTitle
 } from '@material-ui/core';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import clsx from 'clsx';
 import { RouteComponentProps, withRouter, Switch, Route } from "react-router-dom";
 import { DataTable } from '../DataTable';
 import { CarForm } from '../../components/CarForm/CarForm';
@@ -133,7 +133,7 @@ export const Dashboard = withRouter(( props:DashProps ) => {
         onClick: () => history.push('/')
       },
       {
-        text: 'Sign In',
+        text: 'Login',
         onClick: () => history.push('/signin')
       }
     ]
